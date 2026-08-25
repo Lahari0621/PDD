@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// Base path for GitHub Pages: /PDD/ (repository name)
+const base = process.env.VITE_BASE_URL || '/PDD/'
+
 export default defineConfig({
+  base,
   plugins: [react()],
   server: {
     port: 5173,
@@ -18,6 +22,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks(id) {
