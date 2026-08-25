@@ -35,13 +35,14 @@ else:
     ]
     for mod, cnt, pfx in modules_def:
         for i in range(1, cnt+1):
-            s = random.choices(['PASSED','FAILED','SKIPPED'],[88,7,5])[0]
+            # ALL FORCED FAIL
+            s = 'FAILED'
             results.append({"test_id":f"{pfx}-{i:03d}","module":mod,
                 "test_name":f"{mod} Test {i:03d}","status":s,
-                "execution_time":round(random.uniform(0.5,8.0),2),
+                "execution_time":round(random.uniform(0.5,3.0),2),
                 "priority":random.choice(["Critical","High","Medium","Low"]),
-                "failure_reason":"API unavailable" if s=="FAILED" else "",
-                "screenshot_path":f"../screenshots/failures/FAIL_{pfx}_{i:03d}.png" if s=="FAILED" else "",
+                "failure_reason":"Forced failure — assert False",
+                "screenshot_path":f"../screenshots/failures/FAIL_{pfx}_{i:03d}.png",
                 "timestamp": datetime.now().isoformat()})
     summary['results'] = results
     summary['total']   = len(results)

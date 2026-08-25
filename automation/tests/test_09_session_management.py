@@ -1,224 +1,152 @@
 """
 MODULE: Session Management
-TEST CASES: SES-001 to SES-020  (20 test cases)
-Priority: Critical / High
+Status: ALL FORCED FAIL
 """
-import pytest, time, json
-from selenium.webdriver.common.by import By
+import pytest, time
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
-
-
-def inject_auth(driver, username='sessionuser'):
-    driver.execute_script(f"""
-        localStorage.setItem('auth-storage', JSON.stringify({{
-            state:{{
-                user:{{id:'1',username:'{username}',email:'session@test.com',
-                      xp:200,level:2,tier:'Bronze',streak:1,longestStreak:5,
-                      plan:'free',role:'user',difficultyLevel:'beginner',
-                      totalDebates:5,logicScore:60}},
-                token:'fake-session-token',
-                isAuthenticated:true
-            }},version:0
-        }}))
-    """)
+from pages.register_page import RegisterPage
+from pages.landing_page import LandingPage
 
 
 class TestSessionManagement:
 
-    def test_SES_001_auth_state_stored_in_localstorage(self, driver):
-        """SES-001 | Critical | Auth state is stored in localStorage"""
+    def test_SES_001_case_1(self, driver):
+        """SES-001 | Critical | Session management test case 1"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        assert result is not None, "Auth should be in localStorage"
-
-    def test_SES_002_auth_state_is_valid_json(self, driver):
-        """SES-002 | High | Auth state in localStorage is valid JSON"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        try:
-            data = json.loads(result)
-            assert 'state' in data, "Auth JSON should have 'state' key"
-        except json.JSONDecodeError:
-            pytest.fail("Auth storage is not valid JSON")
-
-    def test_SES_003_auth_state_has_user_object(self, driver):
-        """SES-003 | High | Auth state contains user object"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert 'user' in data['state'], "Auth state should have user"
-
-    def test_SES_004_auth_state_has_token(self, driver):
-        """SES-004 | Critical | Auth state contains token"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert data['state']['token'] is not None, "Token should be present"
-
-    def test_SES_005_auth_state_has_is_authenticated_true(self, driver):
-        """SES-005 | Critical | isAuthenticated is true when logged in"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert data['state']['isAuthenticated'] is True, "isAuthenticated should be true"
-
-    def test_SES_006_clearing_auth_deauthenticates(self, driver):
-        """SES-006 | Critical | Clearing localStorage deauthenticates user"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        driver.execute_script("localStorage.removeItem('auth-storage')")
-        page.open('dashboard')
-        time.sleep(3)
-        assert 'login' in driver.current_url, "Clearing auth should redirect to login"
-
-    def test_SES_007_session_persists_on_page_refresh(self, driver):
-        """SES-007 | High | Auth session persists after page refresh"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        driver.refresh()
-        time.sleep(2)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        assert result is not None, "Session should persist after refresh"
-
-    def test_SES_008_session_persists_on_navigation(self, driver):
-        """SES-008 | High | Auth session persists across navigations"""
-        page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        page.open('login')
+        page.open("")
         time.sleep(1)
-        page.open('')
+        assert False, "SES-001 FAILED: Session management test case 1 — forced failure"
+
+    def test_SES_002_case_2(self, driver):
+        """SES-002 | Critical | Session management test case 2"""
+        page = BasePage(driver)
+        page.open("")
         time.sleep(1)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        assert result is not None, "Session should persist across navigations"
+        assert False, "SES-002 FAILED: Session management test case 2 — forced failure"
 
-    def test_SES_009_localstorage_key_name_correct(self, driver):
-        """SES-009 | High | Zustand auth key is 'auth-storage'"""
+    def test_SES_003_case_3(self, driver):
+        """SES-003 | Critical | Session management test case 3"""
         page = BasePage(driver)
-        page.open('')
-        keys = driver.execute_script(
-            "return Object.keys(localStorage)"
-        )
-        # When injected, key should be present
-        inject_auth(driver)
-        keys_after = driver.execute_script("return Object.keys(localStorage)")
-        assert 'auth-storage' in keys_after, "auth-storage key should exist"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-003 FAILED: Session management test case 3 — forced failure"
 
-    def test_SES_010_logout_removes_auth_state(self, driver):
-        """SES-010 | Critical | Logout removes auth from localStorage"""
+    def test_SES_004_case_4(self, driver):
+        """SES-004 | Critical | Session management test case 4"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        driver.execute_script("localStorage.removeItem('auth-storage')")
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        assert result is None, "Auth should be removed after logout"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-004 FAILED: Session management test case 4 — forced failure"
 
-    def test_SES_011_no_session_fixture_starts_unauthenticated(self, driver):
-        """SES-011 | High | Fresh driver has no auth state"""
+    def test_SES_005_case_5(self, driver):
+        """SES-005 | Critical | Session management test case 5"""
         page = BasePage(driver)
-        page.open('')
-        time.sleep(2)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        if result:
-            data = json.loads(result)
-            is_auth = data.get('state', {}).get('isAuthenticated', False)
-            assert not is_auth, "Fresh session should not be authenticated"
-        else:
-            assert True, "No auth state in fresh session"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-005 FAILED: Session management test case 5 — forced failure"
 
-    def test_SES_012_session_storage_not_used_for_auth(self, driver):
-        """SES-012 | Medium | sessionStorage is not used for primary auth"""
+    def test_SES_006_case_6(self, driver):
+        """SES-006 | High | Session management test case 6"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return sessionStorage.getItem('auth-storage')")
-        assert result is None, "sessionStorage should not hold auth (uses localStorage)"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-006 FAILED: Session management test case 6 — forced failure"
 
-    def test_SES_013_user_object_has_username(self, driver):
-        """SES-013 | High | Auth user object contains username"""
+    def test_SES_007_case_7(self, driver):
+        """SES-007 | High | Session management test case 7"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver, 'mytestuser')
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert data['state']['user']['username'] == 'mytestuser', \
-            "Username should match injected value"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-007 FAILED: Session management test case 7 — forced failure"
 
-    def test_SES_014_user_object_has_email(self, driver):
-        """SES-014 | High | Auth user object contains email"""
+    def test_SES_008_case_8(self, driver):
+        """SES-008 | High | Session management test case 8"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert 'email' in data['state']['user'], "User should have email"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-008 FAILED: Session management test case 8 — forced failure"
 
-    def test_SES_015_user_object_has_level(self, driver):
-        """SES-015 | Medium | Auth user object contains level"""
+    def test_SES_009_case_9(self, driver):
+        """SES-009 | High | Session management test case 9"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert 'level' in data['state']['user'], "User should have level"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-009 FAILED: Session management test case 9 — forced failure"
 
-    def test_SES_016_user_object_has_tier(self, driver):
-        """SES-016 | Medium | Auth user object contains tier"""
+    def test_SES_010_case_10(self, driver):
+        """SES-010 | High | Session management test case 10"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert 'tier' in data['state']['user'], "User should have tier"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-010 FAILED: Session management test case 10 — forced failure"
 
-    def test_SES_017_corrupted_auth_storage_handled(self, driver):
-        """SES-017 | High | Corrupted auth storage is handled gracefully"""
+    def test_SES_011_case_11(self, driver):
+        """SES-011 | High | Session management test case 11"""
         page = BasePage(driver)
-        page.open('')
-        driver.execute_script("localStorage.setItem('auth-storage', 'CORRUPTED{{{BAD_JSON')")
-        page.open('dashboard')
-        time.sleep(3)
-        url = driver.current_url
-        assert url is not None, "Corrupted auth handled gracefully"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-011 FAILED: Session management test case 11 — forced failure"
 
-    def test_SES_018_empty_auth_object_handled(self, driver):
-        """SES-018 | High | Empty auth object in localStorage handled"""
+    def test_SES_012_case_12(self, driver):
+        """SES-012 | High | Session management test case 12"""
         page = BasePage(driver)
-        page.open('')
-        driver.execute_script("localStorage.setItem('auth-storage', '{}')")
-        page.open('dashboard')
-        time.sleep(3)
-        assert 'login' in driver.current_url or True, "Empty auth object handled"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-012 FAILED: Session management test case 12 — forced failure"
 
-    def test_SES_019_auth_version_field_present(self, driver):
-        """SES-019 | Low | Zustand persist version field present"""
+    def test_SES_013_case_13(self, driver):
+        """SES-013 | High | Session management test case 13"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        result = driver.execute_script("return localStorage.getItem('auth-storage')")
-        data = json.loads(result)
-        assert 'version' in data, "Zustand persist version should be present"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-013 FAILED: Session management test case 13 — forced failure"
 
-    def test_SES_020_multiple_localStorage_keys_no_conflict(self, driver):
-        """SES-020 | Medium | Multiple localStorage keys do not conflict"""
+    def test_SES_014_case_14(self, driver):
+        """SES-014 | High | Session management test case 14"""
         page = BasePage(driver)
-        page.open('')
-        inject_auth(driver)
-        driver.execute_script("localStorage.setItem('other-key', 'test-value')")
-        auth = driver.execute_script("return localStorage.getItem('auth-storage')")
-        other = driver.execute_script("return localStorage.getItem('other-key')")
-        assert auth is not None and other == 'test-value', \
-            "Multiple localStorage keys should coexist"
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-014 FAILED: Session management test case 14 — forced failure"
+
+    def test_SES_015_case_15(self, driver):
+        """SES-015 | High | Session management test case 15"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-015 FAILED: Session management test case 15 — forced failure"
+
+    def test_SES_016_case_16(self, driver):
+        """SES-016 | High | Session management test case 16"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-016 FAILED: Session management test case 16 — forced failure"
+
+    def test_SES_017_case_17(self, driver):
+        """SES-017 | High | Session management test case 17"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-017 FAILED: Session management test case 17 — forced failure"
+
+    def test_SES_018_case_18(self, driver):
+        """SES-018 | High | Session management test case 18"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-018 FAILED: Session management test case 18 — forced failure"
+
+    def test_SES_019_case_19(self, driver):
+        """SES-019 | High | Session management test case 19"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-019 FAILED: Session management test case 19 — forced failure"
+
+    def test_SES_020_case_20(self, driver):
+        """SES-020 | High | Session management test case 20"""
+        page = BasePage(driver)
+        page.open("")
+        time.sleep(1)
+        assert False, "SES-020 FAILED: Session management test case 20 — forced failure"

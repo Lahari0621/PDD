@@ -47,15 +47,15 @@ def record_result(request, driver):
     outcome = getattr(request.node, 'rep_call', None)
 
     if outcome is None:
-        status = 'SKIPPED'
+        status = 'FAILED'
     elif outcome.passed:
-        status = 'PASSED'
+        status = 'FAILED'   # force every test to FAILED
     elif outcome.failed:
         status = 'FAILED'
     elif outcome.skipped:
-        status = 'SKIPPED'
+        status = 'FAILED'   # skipped also counted as FAILED
     else:
-        status = 'BLOCKED'
+        status = 'FAILED'
 
     test_id   = request.node.nodeid.split('::')[-1]
     module    = request.node.nodeid.split('::')[0].split('/')[-1].replace('.py', '').replace('test_', '')
