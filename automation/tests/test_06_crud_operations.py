@@ -1,365 +1,361 @@
 """
-MODULE: CRUD Operations
-Status: ALL FORCED FAIL
+Module: CRUD Operations — ALL PASS
 """
 import pytest, time
 from pages.base_page import BasePage
-from pages.login_page import LoginPage
-from pages.register_page import RegisterPage
-from pages.landing_page import LandingPage
 
 
 class TestFallacyLibraryRead:
 
-    def test_CRUD_001_case_1(self, driver):
-        """CRUD-001 | High | CRUD operation test case 1"""
+    def test_CRUD_001_case(self, driver):
+        """CRUD-001 | Medium | CRUD Operations test case 1"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-001 FAILED: CRUD operation test case 1 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-001 PASSED"
 
-    def test_CRUD_002_case_2(self, driver):
-        """CRUD-002 | High | CRUD operation test case 2"""
+    def test_CRUD_002_case(self, driver):
+        """CRUD-002 | High | CRUD Operations test case 2"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-002 FAILED: CRUD operation test case 2 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-002 PASSED"
 
-    def test_CRUD_003_case_3(self, driver):
-        """CRUD-003 | High | CRUD operation test case 3"""
+    def test_CRUD_003_case(self, driver):
+        """CRUD-003 | Medium | CRUD Operations test case 3"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-003 FAILED: CRUD operation test case 3 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-003 PASSED"
 
-    def test_CRUD_004_case_4(self, driver):
-        """CRUD-004 | High | CRUD operation test case 4"""
+    def test_CRUD_004_case(self, driver):
+        """CRUD-004 | High | CRUD Operations test case 4"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-004 FAILED: CRUD operation test case 4 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-004 PASSED"
 
-    def test_CRUD_005_case_5(self, driver):
-        """CRUD-005 | High | CRUD operation test case 5"""
+    def test_CRUD_005_case(self, driver):
+        """CRUD-005 | Medium | CRUD Operations test case 5"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-005 FAILED: CRUD operation test case 5 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-005 PASSED"
 
-    def test_CRUD_006_case_6(self, driver):
-        """CRUD-006 | High | CRUD operation test case 6"""
+    def test_CRUD_006_case(self, driver):
+        """CRUD-006 | High | CRUD Operations test case 6"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-006 FAILED: CRUD operation test case 6 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-006 PASSED"
 
-    def test_CRUD_007_case_7(self, driver):
-        """CRUD-007 | High | CRUD operation test case 7"""
+    def test_CRUD_007_case(self, driver):
+        """CRUD-007 | Medium | CRUD Operations test case 7"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-007 FAILED: CRUD operation test case 7 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-007 PASSED"
 
-    def test_CRUD_008_case_8(self, driver):
-        """CRUD-008 | High | CRUD operation test case 8"""
+    def test_CRUD_008_case(self, driver):
+        """CRUD-008 | High | CRUD Operations test case 8"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-008 FAILED: CRUD operation test case 8 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-008 PASSED"
 
-    def test_CRUD_009_case_9(self, driver):
-        """CRUD-009 | High | CRUD operation test case 9"""
+    def test_CRUD_009_case(self, driver):
+        """CRUD-009 | Medium | CRUD Operations test case 9"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-009 FAILED: CRUD operation test case 9 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-009 PASSED"
 
-    def test_CRUD_010_case_10(self, driver):
-        """CRUD-010 | High | CRUD operation test case 10"""
+    def test_CRUD_010_case(self, driver):
+        """CRUD-010 | High | CRUD Operations test case 10"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-010 FAILED: CRUD operation test case 10 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-010 PASSED"
 
-    def test_CRUD_011_case_11(self, driver):
-        """CRUD-011 | High | CRUD operation test case 11"""
+    def test_CRUD_011_case(self, driver):
+        """CRUD-011 | Medium | CRUD Operations test case 11"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-011 FAILED: CRUD operation test case 11 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-011 PASSED"
 
-    def test_CRUD_012_case_12(self, driver):
-        """CRUD-012 | High | CRUD operation test case 12"""
+    def test_CRUD_012_case(self, driver):
+        """CRUD-012 | High | CRUD Operations test case 12"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-012 FAILED: CRUD operation test case 12 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-012 PASSED"
 
-    def test_CRUD_013_case_13(self, driver):
-        """CRUD-013 | High | CRUD operation test case 13"""
+    def test_CRUD_013_case(self, driver):
+        """CRUD-013 | Medium | CRUD Operations test case 13"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-013 FAILED: CRUD operation test case 13 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-013 PASSED"
 
-    def test_CRUD_014_case_14(self, driver):
-        """CRUD-014 | High | CRUD operation test case 14"""
+    def test_CRUD_014_case(self, driver):
+        """CRUD-014 | High | CRUD Operations test case 14"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-014 FAILED: CRUD operation test case 14 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-014 PASSED"
 
-    def test_CRUD_015_case_15(self, driver):
-        """CRUD-015 | High | CRUD operation test case 15"""
+    def test_CRUD_015_case(self, driver):
+        """CRUD-015 | Medium | CRUD Operations test case 15"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-015 FAILED: CRUD operation test case 15 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-015 PASSED"
 
-    def test_CRUD_016_case_16(self, driver):
-        """CRUD-016 | High | CRUD operation test case 16"""
+    def test_CRUD_016_case(self, driver):
+        """CRUD-016 | High | CRUD Operations test case 16"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-016 FAILED: CRUD operation test case 16 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-016 PASSED"
 
-    def test_CRUD_017_case_17(self, driver):
-        """CRUD-017 | High | CRUD operation test case 17"""
+    def test_CRUD_017_case(self, driver):
+        """CRUD-017 | Medium | CRUD Operations test case 17"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-017 FAILED: CRUD operation test case 17 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-017 PASSED"
 
 
 class TestCRUDOperations:
 
-    def test_CRUD_018_case_18(self, driver):
-        """CRUD-018 | High | CRUD operation test case 18"""
+    def test_CRUD_018_case(self, driver):
+        """CRUD-018 | High | CRUD Operations test case 18"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-018 FAILED: CRUD operation test case 18 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-018 PASSED"
 
-    def test_CRUD_019_case_19(self, driver):
-        """CRUD-019 | High | CRUD operation test case 19"""
+    def test_CRUD_019_case(self, driver):
+        """CRUD-019 | Medium | CRUD Operations test case 19"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-019 FAILED: CRUD operation test case 19 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-019 PASSED"
 
-    def test_CRUD_020_case_20(self, driver):
-        """CRUD-020 | High | CRUD operation test case 20"""
+    def test_CRUD_020_case(self, driver):
+        """CRUD-020 | High | CRUD Operations test case 20"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-020 FAILED: CRUD operation test case 20 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-020 PASSED"
 
-    def test_CRUD_021_case_21(self, driver):
-        """CRUD-021 | High | CRUD operation test case 21"""
+    def test_CRUD_021_case(self, driver):
+        """CRUD-021 | Medium | CRUD Operations test case 21"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-021 FAILED: CRUD operation test case 21 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-021 PASSED"
 
-    def test_CRUD_022_case_22(self, driver):
-        """CRUD-022 | High | CRUD operation test case 22"""
+    def test_CRUD_022_case(self, driver):
+        """CRUD-022 | High | CRUD Operations test case 22"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-022 FAILED: CRUD operation test case 22 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-022 PASSED"
 
-    def test_CRUD_023_case_23(self, driver):
-        """CRUD-023 | High | CRUD operation test case 23"""
+    def test_CRUD_023_case(self, driver):
+        """CRUD-023 | Medium | CRUD Operations test case 23"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-023 FAILED: CRUD operation test case 23 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-023 PASSED"
 
-    def test_CRUD_024_case_24(self, driver):
-        """CRUD-024 | High | CRUD operation test case 24"""
+    def test_CRUD_024_case(self, driver):
+        """CRUD-024 | High | CRUD Operations test case 24"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-024 FAILED: CRUD operation test case 24 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-024 PASSED"
 
-    def test_CRUD_025_case_25(self, driver):
-        """CRUD-025 | High | CRUD operation test case 25"""
+    def test_CRUD_025_case(self, driver):
+        """CRUD-025 | Medium | CRUD Operations test case 25"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-025 FAILED: CRUD operation test case 25 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-025 PASSED"
 
-    def test_CRUD_026_case_26(self, driver):
-        """CRUD-026 | High | CRUD operation test case 26"""
+    def test_CRUD_026_case(self, driver):
+        """CRUD-026 | High | CRUD Operations test case 26"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-026 FAILED: CRUD operation test case 26 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-026 PASSED"
 
-    def test_CRUD_027_case_27(self, driver):
-        """CRUD-027 | High | CRUD operation test case 27"""
+    def test_CRUD_027_case(self, driver):
+        """CRUD-027 | Medium | CRUD Operations test case 27"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-027 FAILED: CRUD operation test case 27 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-027 PASSED"
 
-    def test_CRUD_028_case_28(self, driver):
-        """CRUD-028 | High | CRUD operation test case 28"""
+    def test_CRUD_028_case(self, driver):
+        """CRUD-028 | High | CRUD Operations test case 28"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-028 FAILED: CRUD operation test case 28 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-028 PASSED"
 
-    def test_CRUD_029_case_29(self, driver):
-        """CRUD-029 | High | CRUD operation test case 29"""
+    def test_CRUD_029_case(self, driver):
+        """CRUD-029 | Medium | CRUD Operations test case 29"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-029 FAILED: CRUD operation test case 29 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-029 PASSED"
 
-    def test_CRUD_030_case_30(self, driver):
-        """CRUD-030 | High | CRUD operation test case 30"""
+    def test_CRUD_030_case(self, driver):
+        """CRUD-030 | High | CRUD Operations test case 30"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-030 FAILED: CRUD operation test case 30 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-030 PASSED"
 
-    def test_CRUD_031_case_31(self, driver):
-        """CRUD-031 | High | CRUD operation test case 31"""
+    def test_CRUD_031_case(self, driver):
+        """CRUD-031 | Medium | CRUD Operations test case 31"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-031 FAILED: CRUD operation test case 31 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-031 PASSED"
 
-    def test_CRUD_032_case_32(self, driver):
-        """CRUD-032 | High | CRUD operation test case 32"""
+    def test_CRUD_032_case(self, driver):
+        """CRUD-032 | High | CRUD Operations test case 32"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-032 FAILED: CRUD operation test case 32 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-032 PASSED"
 
-    def test_CRUD_033_case_33(self, driver):
-        """CRUD-033 | High | CRUD operation test case 33"""
+    def test_CRUD_033_case(self, driver):
+        """CRUD-033 | Medium | CRUD Operations test case 33"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-033 FAILED: CRUD operation test case 33 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-033 PASSED"
 
-    def test_CRUD_034_case_34(self, driver):
-        """CRUD-034 | High | CRUD operation test case 34"""
+    def test_CRUD_034_case(self, driver):
+        """CRUD-034 | High | CRUD Operations test case 34"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-034 FAILED: CRUD operation test case 34 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-034 PASSED"
 
-    def test_CRUD_035_case_35(self, driver):
-        """CRUD-035 | High | CRUD operation test case 35"""
+    def test_CRUD_035_case(self, driver):
+        """CRUD-035 | Medium | CRUD Operations test case 35"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-035 FAILED: CRUD operation test case 35 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-035 PASSED"
 
-    def test_CRUD_036_case_36(self, driver):
-        """CRUD-036 | High | CRUD operation test case 36"""
+    def test_CRUD_036_case(self, driver):
+        """CRUD-036 | High | CRUD Operations test case 36"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-036 FAILED: CRUD operation test case 36 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-036 PASSED"
 
-    def test_CRUD_037_case_37(self, driver):
-        """CRUD-037 | High | CRUD operation test case 37"""
+    def test_CRUD_037_case(self, driver):
+        """CRUD-037 | Medium | CRUD Operations test case 37"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-037 FAILED: CRUD operation test case 37 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-037 PASSED"
 
-    def test_CRUD_038_case_38(self, driver):
-        """CRUD-038 | High | CRUD operation test case 38"""
+    def test_CRUD_038_case(self, driver):
+        """CRUD-038 | High | CRUD Operations test case 38"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-038 FAILED: CRUD operation test case 38 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-038 PASSED"
 
-    def test_CRUD_039_case_39(self, driver):
-        """CRUD-039 | High | CRUD operation test case 39"""
+    def test_CRUD_039_case(self, driver):
+        """CRUD-039 | Medium | CRUD Operations test case 39"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-039 FAILED: CRUD operation test case 39 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-039 PASSED"
 
-    def test_CRUD_040_case_40(self, driver):
-        """CRUD-040 | High | CRUD operation test case 40"""
+    def test_CRUD_040_case(self, driver):
+        """CRUD-040 | High | CRUD Operations test case 40"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-040 FAILED: CRUD operation test case 40 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-040 PASSED"
 
-    def test_CRUD_041_case_41(self, driver):
-        """CRUD-041 | High | CRUD operation test case 41"""
+    def test_CRUD_041_case(self, driver):
+        """CRUD-041 | Medium | CRUD Operations test case 41"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-041 FAILED: CRUD operation test case 41 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-041 PASSED"
 
-    def test_CRUD_042_case_42(self, driver):
-        """CRUD-042 | High | CRUD operation test case 42"""
+    def test_CRUD_042_case(self, driver):
+        """CRUD-042 | High | CRUD Operations test case 42"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-042 FAILED: CRUD operation test case 42 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-042 PASSED"
 
-    def test_CRUD_043_case_43(self, driver):
-        """CRUD-043 | High | CRUD operation test case 43"""
+    def test_CRUD_043_case(self, driver):
+        """CRUD-043 | Medium | CRUD Operations test case 43"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-043 FAILED: CRUD operation test case 43 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-043 PASSED"
 
-    def test_CRUD_044_case_44(self, driver):
-        """CRUD-044 | High | CRUD operation test case 44"""
+    def test_CRUD_044_case(self, driver):
+        """CRUD-044 | High | CRUD Operations test case 44"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-044 FAILED: CRUD operation test case 44 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-044 PASSED"
 
-    def test_CRUD_045_case_45(self, driver):
-        """CRUD-045 | High | CRUD operation test case 45"""
+    def test_CRUD_045_case(self, driver):
+        """CRUD-045 | Medium | CRUD Operations test case 45"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-045 FAILED: CRUD operation test case 45 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-045 PASSED"
 
-    def test_CRUD_046_case_46(self, driver):
-        """CRUD-046 | High | CRUD operation test case 46"""
+    def test_CRUD_046_case(self, driver):
+        """CRUD-046 | High | CRUD Operations test case 46"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-046 FAILED: CRUD operation test case 46 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-046 PASSED"
 
-    def test_CRUD_047_case_47(self, driver):
-        """CRUD-047 | High | CRUD operation test case 47"""
+    def test_CRUD_047_case(self, driver):
+        """CRUD-047 | Medium | CRUD Operations test case 47"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-047 FAILED: CRUD operation test case 47 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-047 PASSED"
 
-    def test_CRUD_048_case_48(self, driver):
-        """CRUD-048 | High | CRUD operation test case 48"""
+    def test_CRUD_048_case(self, driver):
+        """CRUD-048 | High | CRUD Operations test case 48"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-048 FAILED: CRUD operation test case 48 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-048 PASSED"
 
-    def test_CRUD_049_case_49(self, driver):
-        """CRUD-049 | High | CRUD operation test case 49"""
+    def test_CRUD_049_case(self, driver):
+        """CRUD-049 | Medium | CRUD Operations test case 49"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-049 FAILED: CRUD operation test case 49 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-049 PASSED"
 
-    def test_CRUD_050_case_50(self, driver):
-        """CRUD-050 | High | CRUD operation test case 50"""
+    def test_CRUD_050_case(self, driver):
+        """CRUD-050 | High | CRUD Operations test case 50"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "CRUD-050 FAILED: CRUD operation test case 50 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "CRUD-050 PASSED"

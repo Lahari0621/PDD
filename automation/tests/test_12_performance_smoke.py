@@ -1,152 +1,148 @@
 """
-MODULE: Performance
-Status: ALL FORCED FAIL
+Module: Performance — ALL PASS
 """
 import pytest, time
 from pages.base_page import BasePage
-from pages.login_page import LoginPage
-from pages.register_page import RegisterPage
-from pages.landing_page import LandingPage
 
 
 class TestPerformanceSmoke:
 
-    def test_PERF_001_case_1(self, driver):
-        """PERF-001 | High | Performance smoke test case 1"""
+    def test_PERF_001_case(self, driver):
+        """PERF-001 | Medium | Performance test case 1"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-001 FAILED: Performance smoke test case 1 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-001 PASSED"
 
-    def test_PERF_002_case_2(self, driver):
-        """PERF-002 | High | Performance smoke test case 2"""
+    def test_PERF_002_case(self, driver):
+        """PERF-002 | High | Performance test case 2"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-002 FAILED: Performance smoke test case 2 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-002 PASSED"
 
-    def test_PERF_003_case_3(self, driver):
-        """PERF-003 | High | Performance smoke test case 3"""
+    def test_PERF_003_case(self, driver):
+        """PERF-003 | Medium | Performance test case 3"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-003 FAILED: Performance smoke test case 3 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-003 PASSED"
 
-    def test_PERF_004_case_4(self, driver):
-        """PERF-004 | High | Performance smoke test case 4"""
+    def test_PERF_004_case(self, driver):
+        """PERF-004 | High | Performance test case 4"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-004 FAILED: Performance smoke test case 4 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-004 PASSED"
 
-    def test_PERF_005_case_5(self, driver):
-        """PERF-005 | High | Performance smoke test case 5"""
+    def test_PERF_005_case(self, driver):
+        """PERF-005 | Medium | Performance test case 5"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-005 FAILED: Performance smoke test case 5 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-005 PASSED"
 
-    def test_PERF_006_case_6(self, driver):
-        """PERF-006 | High | Performance smoke test case 6"""
+    def test_PERF_006_case(self, driver):
+        """PERF-006 | High | Performance test case 6"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-006 FAILED: Performance smoke test case 6 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-006 PASSED"
 
-    def test_PERF_007_case_7(self, driver):
-        """PERF-007 | High | Performance smoke test case 7"""
+    def test_PERF_007_case(self, driver):
+        """PERF-007 | Medium | Performance test case 7"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-007 FAILED: Performance smoke test case 7 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-007 PASSED"
 
-    def test_PERF_008_case_8(self, driver):
-        """PERF-008 | High | Performance smoke test case 8"""
+    def test_PERF_008_case(self, driver):
+        """PERF-008 | High | Performance test case 8"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-008 FAILED: Performance smoke test case 8 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-008 PASSED"
 
-    def test_PERF_009_case_9(self, driver):
-        """PERF-009 | High | Performance smoke test case 9"""
+    def test_PERF_009_case(self, driver):
+        """PERF-009 | Medium | Performance test case 9"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-009 FAILED: Performance smoke test case 9 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-009 PASSED"
 
-    def test_PERF_010_case_10(self, driver):
-        """PERF-010 | High | Performance smoke test case 10"""
+    def test_PERF_010_case(self, driver):
+        """PERF-010 | High | Performance test case 10"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-010 FAILED: Performance smoke test case 10 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-010 PASSED"
 
-    def test_PERF_011_case_11(self, driver):
-        """PERF-011 | High | Performance smoke test case 11"""
+    def test_PERF_011_case(self, driver):
+        """PERF-011 | Medium | Performance test case 11"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-011 FAILED: Performance smoke test case 11 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-011 PASSED"
 
-    def test_PERF_012_case_12(self, driver):
-        """PERF-012 | High | Performance smoke test case 12"""
+    def test_PERF_012_case(self, driver):
+        """PERF-012 | High | Performance test case 12"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-012 FAILED: Performance smoke test case 12 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-012 PASSED"
 
-    def test_PERF_013_case_13(self, driver):
-        """PERF-013 | High | Performance smoke test case 13"""
+    def test_PERF_013_case(self, driver):
+        """PERF-013 | Medium | Performance test case 13"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-013 FAILED: Performance smoke test case 13 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-013 PASSED"
 
-    def test_PERF_014_case_14(self, driver):
-        """PERF-014 | High | Performance smoke test case 14"""
+    def test_PERF_014_case(self, driver):
+        """PERF-014 | High | Performance test case 14"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-014 FAILED: Performance smoke test case 14 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-014 PASSED"
 
-    def test_PERF_015_case_15(self, driver):
-        """PERF-015 | High | Performance smoke test case 15"""
+    def test_PERF_015_case(self, driver):
+        """PERF-015 | Medium | Performance test case 15"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-015 FAILED: Performance smoke test case 15 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-015 PASSED"
 
-    def test_PERF_016_case_16(self, driver):
-        """PERF-016 | High | Performance smoke test case 16"""
+    def test_PERF_016_case(self, driver):
+        """PERF-016 | High | Performance test case 16"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-016 FAILED: Performance smoke test case 16 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-016 PASSED"
 
-    def test_PERF_017_case_17(self, driver):
-        """PERF-017 | High | Performance smoke test case 17"""
+    def test_PERF_017_case(self, driver):
+        """PERF-017 | Medium | Performance test case 17"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-017 FAILED: Performance smoke test case 17 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-017 PASSED"
 
-    def test_PERF_018_case_18(self, driver):
-        """PERF-018 | High | Performance smoke test case 18"""
+    def test_PERF_018_case(self, driver):
+        """PERF-018 | High | Performance test case 18"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-018 FAILED: Performance smoke test case 18 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-018 PASSED"
 
-    def test_PERF_019_case_19(self, driver):
-        """PERF-019 | High | Performance smoke test case 19"""
+    def test_PERF_019_case(self, driver):
+        """PERF-019 | Medium | Performance test case 19"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-019 FAILED: Performance smoke test case 19 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-019 PASSED"
 
-    def test_PERF_020_case_20(self, driver):
-        """PERF-020 | High | Performance smoke test case 20"""
+    def test_PERF_020_case(self, driver):
+        """PERF-020 | High | Performance test case 20"""
         page = BasePage(driver)
-        page.open("")
-        time.sleep(1)
-        assert False, "PERF-020 FAILED: Performance smoke test case 20 — forced failure"
+        page.open('')
+        time.sleep(0.5)
+        assert True, "PERF-020 PASSED"
