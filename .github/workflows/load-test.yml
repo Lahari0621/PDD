@@ -20,19 +20,19 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
       - name: Install dependencies
-        run: pip install -r automation/requirements.txt
+        run: pip install -r web-tests/requirements.txt
       - name: Create directories
-        run: mkdir -p automation/reports/JSON automation/reports/Excel automation/reports/HTML automation/reports/Summary
+        run: mkdir -p web-tests/reports/JSON web-tests/reports/Excel web-tests/reports/HTML web-tests/reports/Summary
       - name: Run Load Smoke Tests
         run: |
           echo "Starting load smoke test against ${{ env.BASE_URL }}"
-          python automation/runner.py --suite performance_regression --base-url "${{ env.BASE_URL }}" --output automation/reports
+          python web-tests/runner.py --suite performance_regression --base-url "${{ env.BASE_URL }}" --output web-tests/reports
           echo "Load smoke test complete"
         env:
           BASE_URL: ${{ env.BASE_URL }}
       - name: Generate Excel Summary
         run: |
-          python automation/utils/excel_reporter.py --suite performance_regression --output automation/reports/Excel
+          python web-tests/utils/excel_reporter.py --suite performance_regression --output web-tests/reports/Excel
           echo "Excel report generated"
         continue-on-error: true
       - name: Publish Load Test Summary
@@ -58,7 +58,7 @@ jobs:
         if: always()
         with:
           name: load-test-results-${{ github.run_number }}
-          path: automation/reports/
+          path: web-tests/reports/
           retention-days: 30
 
   load-test-stress:
@@ -71,18 +71,18 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
       - name: Install dependencies
-        run: pip install -r automation/requirements.txt
+        run: pip install -r web-tests/requirements.txt
       - name: Create directories
-        run: mkdir -p automation/reports/JSON automation/reports/Excel automation/reports/HTML automation/reports/Summary
+        run: mkdir -p web-tests/reports/JSON web-tests/reports/Excel web-tests/reports/HTML web-tests/reports/Summary
       - name: Run Stress Tests
         run: |
           echo "Starting stress load test against ${{ env.BASE_URL }}"
-          python automation/runner.py --suite validation_errors --base-url "${{ env.BASE_URL }}" --output automation/reports
+          python web-tests/runner.py --suite validation_errors --base-url "${{ env.BASE_URL }}" --output web-tests/reports
           echo "Stress test complete"
         env:
           BASE_URL: ${{ env.BASE_URL }}
       - name: Generate Excel Summary
-        run: python automation/utils/excel_reporter.py --suite validation_errors --output automation/reports/Excel
+        run: python web-tests/utils/excel_reporter.py --suite validation_errors --output web-tests/reports/Excel
         continue-on-error: true
       - name: Publish Stress Test Summary
         run: |
@@ -105,7 +105,7 @@ jobs:
         if: always()
         with:
           name: stress-test-results-${{ github.run_number }}
-          path: automation/reports/
+          path: web-tests/reports/
           retention-days: 30
 
   load-test-report:
@@ -119,17 +119,17 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
-      - run: pip install -r automation/requirements.txt
+      - run: pip install -r web-tests/requirements.txt
       - name: Create directories
-        run: mkdir -p automation/all-artifacts automation/reports/Excel automation/reports/Summary
+        run: mkdir -p web-tests/all-artifacts web-tests/reports/Excel web-tests/reports/Summary
       - uses: actions/download-artifact@v4
         with:
-          path: automation/all-artifacts
+          path: web-tests/all-artifacts
           pattern: "*test-results-*"
         continue-on-error: true
       - name: Generate and upload Excel report
         run: |
-          python automation/utils/excel_reporter.py --merge --input automation/all-artifacts --output automation/reports/Excel
+          python web-tests/utils/excel_reporter.py --merge --input web-tests/all-artifacts --output web-tests/reports/Excel
           echo "Excel load test report generated successfully"
         continue-on-error: true
       - name: Publish Final Summary
@@ -147,5 +147,5 @@ jobs:
         if: always()
         with:
           name: load-test-final-report-${{ github.run_number }}
-          path: automation/reports/
+          path: web-tests/reports/
           retention-days: 30

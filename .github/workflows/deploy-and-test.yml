@@ -133,23 +133,23 @@ jobs:
           cache: 'pip'
 
       - name: 📦 Install Python Dependencies
-        run: pip install -r automation/requirements.txt
+        run: pip install -r web-tests/requirements.txt
 
       - name: 📁 Create Report Directories
         run: |
-          mkdir -p automation/reports/HTML
-          mkdir -p automation/reports/Excel
-          mkdir -p automation/reports/JSON
-          mkdir -p automation/reports/Summary
-          mkdir -p automation/screenshots
-          mkdir -p automation/logs
+          mkdir -p web-tests/reports/HTML
+          mkdir -p web-tests/reports/Excel
+          mkdir -p web-tests/reports/JSON
+          mkdir -p web-tests/reports/Summary
+          mkdir -p web-tests/screenshots
+          mkdir -p web-tests/logs
 
       - name: 🧪 Run Selenium E2E Tests — ${{ matrix.suite }}
         run: |
-          python automation/runner.py \
+          python web-tests/runner.py \
             --suite ${{ matrix.suite }} \
             --base-url "${{ env.BASE_URL }}" \
-            --output automation/reports
+            --output web-tests/reports
         env:
           BASE_URL: ${{ env.BASE_URL }}
           CI: 'true'
@@ -157,18 +157,18 @@ jobs:
       - name: 📊 Generate HTML Report
         if: always()
         run: |
-          python automation/utils/report_generator.py \
+          python web-tests/utils/report_generator.py \
             --suite "${{ matrix.suite }}" \
-            --output automation/reports \
+            --output web-tests/reports \
             --base-url "${{ env.BASE_URL }}"
         continue-on-error: true
 
       - name: 📊 Generate Excel Report
         if: always()
         run: |
-          python automation/utils/excel_reporter.py \
+          python web-tests/utils/excel_reporter.py \
             --suite "${{ matrix.suite }}" \
-            --output automation/reports/Excel
+            --output web-tests/reports/Excel
         continue-on-error: true
 
       - name: 📤 Upload Test Artifacts
@@ -177,9 +177,9 @@ jobs:
         with:
           name: test-artifacts-${{ matrix.suite }}-${{ github.run_number }}
           path: |
-            automation/reports/
-            automation/screenshots/
-            automation/logs/
+            web-tests/reports/
+            web-tests/screenshots/
+            web-tests/logs/
           retention-days: 30
 
   # ── Stage 5: Final Reports & Summary ───────────────────────────────────────
@@ -199,53 +199,53 @@ jobs:
           cache: 'pip'
 
       - name: 📦 Install Python Dependencies
-        run: pip install -r automation/requirements.txt
+        run: pip install -r web-tests/requirements.txt
 
       - name: 📁 Create Directories
         run: |
-          mkdir -p automation/all-artifacts
-          mkdir -p automation/reports/HTML
-          mkdir -p automation/reports/Excel
-          mkdir -p automation/reports/JSON
-          mkdir -p automation/reports/Summary
-          mkdir -p automation/reports/history
-          mkdir -p automation/screenshots
-          mkdir -p automation/logs
+          mkdir -p web-tests/all-artifacts
+          mkdir -p web-tests/reports/HTML
+          mkdir -p web-tests/reports/Excel
+          mkdir -p web-tests/reports/JSON
+          mkdir -p web-tests/reports/Summary
+          mkdir -p web-tests/reports/history
+          mkdir -p web-tests/screenshots
+          mkdir -p web-tests/logs
 
       - name: 📥 Download All Artifacts
         uses: actions/download-artifact@v4
         with:
-          path: automation/all-artifacts
+          path: web-tests/all-artifacts
           pattern: test-artifacts-*
         continue-on-error: true
 
       - name: 🔀 Merge Reports
         run: |
-          python automation/utils/merge_reports.py \
-            --input automation/all-artifacts \
-            --output automation/reports/merged
+          python web-tests/utils/merge_reports.py \
+            --input web-tests/all-artifacts \
+            --output web-tests/reports/merged
         continue-on-error: true
 
       - name: 📊 Generate Excel Reports
         run: |
-          python automation/utils/excel_reporter.py \
-            --merge --input automation/all-artifacts \
-            --output automation/reports/Excel
+          python web-tests/utils/excel_reporter.py \
+            --merge --input web-tests/all-artifacts \
+            --output web-tests/reports/Excel
         continue-on-error: true
 
       - name: 📊 Generate HTML Dashboard
         run: |
-          python automation/utils/report_generator.py \
-            --final --input automation/all-artifacts \
-            --output automation/reports/HTML \
+          python web-tests/utils/report_generator.py \
+            --final --input web-tests/all-artifacts \
+            --output web-tests/reports/HTML \
             --base-url "${{ env.BASE_URL }}"
         continue-on-error: true
 
       - name: 📊 Generate Summary
         run: |
-          python automation/utils/summary_generator.py \
-            --input  automation/all-artifacts \
-            --output automation/reports/Summary \
+          python web-tests/utils/summary_generator.py \
+            --input  web-tests/all-artifacts \
+            --output web-tests/reports/Summary \
             --base-url "${{ env.BASE_URL }}" \
             --deployment-status "true" \
             --run-id  "${{ github.run_id }}" \
@@ -310,14 +310,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: final-test-reports-${{ github.run_number }}
-          path: automation/reports/
+          path: web-tests/reports/
           retention-days: 30
 
       - name: 🗂️ Store Historical Results
         if: always()
         run: |
-          python automation/utils/history_tracker.py \
-            --input automation/reports \
+          python web-tests/utils/history_tracker.py \
+            --input web-tests/reports \
             --run-id "${{ github.run_id }}" \
             --run-number "${{ github.run_number }}" \
             --branch "${{ github.ref_name }}" \
